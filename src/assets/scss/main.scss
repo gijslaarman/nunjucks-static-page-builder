@@ -1,5 +1,4 @@
-*, *:before, *:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "./0_reset/*.scss";
+
+// Import components
+@import "../../components/**/*.scss";

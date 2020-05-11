@@ -1,3 +1,5 @@
+{% from '../../components/header/header.html' import header %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,13 +11,6 @@
     <title>Nunjucks Static Site</title>
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <a href="/">
-          <img src="/img/logo.png" alt="Logo" />
-        </a>
-      </div>
-    </header>
 
     <main>
       {% block content %} {% endblock %}

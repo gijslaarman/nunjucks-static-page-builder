@@ -4,7 +4,7 @@ const cpx = require('cpx')
 const path = require('path')
 const pages = require('./pages/config.json')
 
-nunjucks.configure('src/pages')
+nunjucks.configure(['src/pages', 'src/components'])
 const distFolder = path.resolve(`${__dirname}/../dist`)
 
 nunjuckStatic.config({
@@ -14,7 +14,8 @@ nunjuckStatic.config({
 cpx.copy(path.resolve(`${__dirname}/assets/copy/**`), distFolder)
 
 pages.forEach(page => {
-  nunjuckStatic.generate(page.template, {}, page.route)
+  const pageDetails = {}
+  nunjuckStatic.generate(page.template, pageDetails, page.route)
 })
 
 return console.log('yo');
