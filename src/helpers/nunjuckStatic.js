@@ -1,11 +1,11 @@
 const nunjucks = require("nunjucks");
 const fs = require("fs");
 const minify = require("html-minifier").minify;
-const path = require("path");
 
 module.exports = {
   config(obj) {
-    this.staticDirectory = obj.staticDirectory || this.staticDirectory || undefined;
+    this.staticDirectory =
+      obj.staticDirectory || this.staticDirectory || undefined;
   },
 
   deletePath(path) {
@@ -28,10 +28,10 @@ module.exports = {
         'No static directory configured. Configure one with "nunjuckStatic.config({ staticDirectory: __dirname + "/public"}) e.g." function.'
       );
 
-    if (dirPath === '/') {
-      dirPath = this.staticDirectory
+    if (dirPath === "/") {
+      dirPath = this.staticDirectory;
     } else {
-      dirPath = this.staticDirectory + dirPath
+      dirPath = this.staticDirectory + dirPath;
     }
 
     if (!fs.existsSync(dirPath)) {
